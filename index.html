@@ -1,0 +1,113 @@
+<!-- Written by Adam Roddick, Swinburne Student 7352328 for Assessment 4 of COS10012 SP4 2014 -->
+
+<!doctype html>
+
+<html>
+<head>
+	<title>COS10012 Assessment 4 - EverWarm Orders</title>
+	<meta charset='utf-8' />
+	<link rel='stylesheet' href='style.css' />
+</head>
+
+<!-- onload=calculateOrder() - see notes in script.js -->
+<body onload="prepareForm();">
+	
+	<!--  container to hold the entire application -->
+	<div id='wrapper'>
+
+	<!-- container for the site navigation menu -->
+	<header>
+		<h1><a href='index.html'>EverWarm Ordering System</a><h1>
+	</header>
+
+<!-- main application area -->
+	<div id='content'>
+		<form id='orderForm'>
+			<br /> 
+			Client Name: <br /> 
+			<input name='clientName' id='clientName' value="" size='40'></input>
+			<br />
+			Client Phone: <br /> 
+			<input name='clientPhone' id='clientPhone' value="" size='40'></input>
+			<br />
+			Delivery Address: <br /> 
+			<input name='deliveryAddress' id='deliveryAddress' value="" size='40'></input>
+			<br />
+			Quantity (units): <br /> 
+			<input name='itemQuantity' id='itemQuantity' size='40' onkeyup="calculateOrder();"></input>
+			<br />
+			Delivery Distance (km): <br /> 
+			<input name='deliveryDistance' id='deliveryDistance' size='40' onkeyup="calculateOrder();"></input>
+			<br />
+			<br />
+			Total ex GST: &nbsp Item Cost: <br /> 
+			$<input type="text" name='totalCostexGST' size='10' id='totalCostexGST' readonly='readonly'> &nbsp $<input type="text" name='itemCostexGst' size='10' id='itemCostexGST' readonly='readonly'>
+			<br /> <br />
+			Total inc GST: &nbsp Item Cost: <br /> 
+			$<input type="text" name='totalCostincGST' size='10' id='totalCostincGST' type='text' readonly="readonly"> &nbsp $<input type="text" name='itemCostincGst' size='10' id='itemCostincGST' readonly='readonly'>
+			<br /> <br />
+			<input type="button" value="Submit Order" onclick="submitOrder();">
+			<input type="button" value="Clear Order" onclick="resetForm();">
+			<input type="button" value="Close Application" onclick="loadFinalTotals();">
+				<br />
+		</form>
+	</div>
+		
+	<div id='reportDivControls'>
+		Admin Use Only - Order History:
+		<br /> Print: <input type="button" value="Print History" onclick="printHistory();"> Hide/Show: <input type="button" value="View History" onclick="toggleReportDiv();">
+	</div>
+
+	<div id='reportDiv'>
+		<table id='reportHistory'>
+			<tr>
+				<th>Client Name</th>
+				<th>Client Phone</th>
+				<th>Delivery Address</th>
+				<th>Quantity</th>
+				<th>Delivery Dist (km)</th>
+				<th>Delivery Cost</th>
+				<th>Ex GST</th>
+				<th>GST</th>
+				<th>Inc GST</th>
+				<th>Time & Date</th>
+			</tr>
+		</table>
+	</div>
+	
+	<div id='totalsDivControls'>
+		Admin Use Only - Order Totals:
+		<br /> Print: <input type="button" value="Print Totals" onclick="printTotals();"> Hide/Show: <input type="button" value="View Totals" onclick="toggleTotalsDiv();">
+	</div>
+	
+	<div id='totalsDiv'>
+		<table id='reportTotals' class='sortable'>
+			<tr>
+				<th>No. Orders</th>
+				<th>Quantity</th>
+				<th>Delivery Dist (km)</th>
+				<th>Delivery Cost</th>
+				<th>Ex GST</th>
+				<th>GST</th>
+				<th>Inc GST</th>
+			</tr>
+			<tr>
+			<td id='td1'> &nbsp </td>
+			<td id='td2'> &nbsp </td>
+			<td id='td3'> &nbsp </td>
+			<td id='td4'> &nbsp </td>
+			<td id='td5'> &nbsp </td>
+			<td id='td6'> &nbsp </td>
+			<td id='td7'> &nbsp </td>
+			</tr>
+		</table>
+	</div>
+
+<script src="script.js"></script>
+
+	<!-- footer container -->
+	<!-- <footer>
+		<p>Adam Roddick | Student ID: 7352328 | Assessment 4 | COS10012 SP4 2014</p>
+	</footer> -->
+</body>	
+</html>

@@ -1,0 +1,97 @@
+/* Written by Adam Roddick, Swinburne Student 7352328 for Assessment 4 of COS10012 SP4 2014 --> */
+
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	font-family:"Segoe UI";	
+    font-size:100%;
+	color:#696969;
+	min-height:100%;
+	height:auto;
+	width:100%;
+}
+
+#wrapper {
+	width:85%;
+	margin:5% auto;
+	border:1px solid;
+}
+
+a {
+	text-decoration:none;
+	color:#696969;
+}
+
+header {
+	padding:10px;
+	border-bottom:1px solid;
+	color:#696969;
+}
+
+header h1 {
+	color:#696969;
+	padding-left:10px;
+}
+
+form {
+	padding-left:10px;
+	color:#696969;
+}
+
+input[type=button]{
+	font-family:"Segoe UI";
+}
+
+#reportDivControls {
+	margin:25px 10px;
+	padding-top:25px;
+	border-top:1px solid;
+}
+
+#reportDiv {
+	margin:25px 10px;
+	display:none;
+}
+
+#totalsDivControls {
+	margin:25px 10px;
+	padding-top:25px;
+	border-top:1px solid;
+}
+
+#totalsDiv {
+	margin:25px 10px;
+	display:none;
+}
+
+/* table */
+table {
+	font-family:"Segoe UI";	
+    font-size:80%;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table th {
+	border-width: 1px;
+	padding: 5px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table td {
+	border-width: 1px;
+	padding: 5px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+footer {
+	padding-left:10px;
+	border-top: 1px solid;
+}
